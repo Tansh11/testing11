@@ -1,3 +1,5 @@
+# variables.tf (Root Directory)
+
 variable "identity_rg_name" {
   description = "The name of the resource group for the user-assigned identity."
   type        = string
@@ -13,13 +15,7 @@ variable "gh_uai_name" {
   type        = string
 }
 
-variable "environment" {
-  description = "The environment in which this resource is being created (e.g., dev, prod)."
-  type        = string
-}
-
 variable "tags" {
   description = "Tags to be assigned to resources."
   type        = map(string)
 }
-
