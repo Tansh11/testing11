@@ -3,10 +3,10 @@ provider "azurerm" {
   features {}
 }
 
-# Retrieve the subscription ID
+# Fetch subscription details using the data source
 data "azurerm_subscription" "sub" {}
 
-# Create the resource group for the identity (already assumed to exist or you could add it here)
+# Create the resource group for the identity (can be omitted if already created)
 module "identity-resource-group" {
   source   = "../modules/resource-group"
   name     = var.identity_rg_name
@@ -29,5 +29,5 @@ module "sub_owner_role_assignment" {
   principal_id = module.gh_usi.user_assinged_identity_principal_id
   role_name    = "Owner"
   principal_type = "ServicePrincipal"
-  scope_id     = data.azurerm_subscription.sub.id
+  scope_id     = data.azurerm_subscription.sub.id  # Using the subscription ID from the data source
 }
