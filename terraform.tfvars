@@ -1,9 +1,9 @@
-identity_rg_name = "my-resource-group"
-location = "East US"
-gh_uai_name = "gh-identity"
-environment = "prod"
+identity_rg_name = "Guild-COS-Development"
+location = "east-us-1"
+gh_uai_name = "cos-development-mi"
+environment = "dev"
 tags = {
-  "project" = "Terraform Demo"
+  "project" = "Terraform"
   "owner"   = "DevOps"
 }
 
