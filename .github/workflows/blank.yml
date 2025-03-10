@@ -10,7 +10,7 @@ on:
 
 jobs:
   terraform:
-    runs-on: terraform-vm  # Target the specific Azure VM
+    runs-on: self-hosted  # Target the specific Azure VM
 
     steps:
       - name: Checkout repository
